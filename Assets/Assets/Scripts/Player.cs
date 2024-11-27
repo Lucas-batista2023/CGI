@@ -53,17 +53,17 @@ void Move()
     transform.position += movement * Time.deltaTime * Speed;
 
     if(Input.GetAxis("Horizontal") > 0f){
-        anim.SetBool("andando", true);
+        anim.SetBool("walk", true);
         transform.eulerAngles = new Vector3(0f,0f,0f);
     }
 
     if(Input.GetAxis("Horizontal") < 0f){
-        anim.SetBool("andando", true);
+        anim.SetBool("walk", true);
         transform.eulerAngles = new Vector3(0f,180f,0f);
     }
 
     if(Input.GetAxis("Horizontal") == 0f){
-        anim.SetBool("andando", false);
+        anim.SetBool("walk", false);
     }
 }
 

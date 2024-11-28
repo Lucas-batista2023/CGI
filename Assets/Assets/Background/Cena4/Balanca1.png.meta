@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8631d02d20d750a44b4d871e70b2f60f
+guid: b62c49a293c77fa428251334549386ba
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OsirisSemFundo_0
+      name: Balanca1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 49
-        height: 104
+        x: 59
+        y: 23
+        width: 382
+        height: 418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e6eb12d9acc7746a3275e5afbc9672
-      internalID: 287879078
+      spriteID: 3d80aa28d9b82194daf0a06a1159cb0f
+      internalID: 769347154
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OsirisSemFundo_0: 287879078
+      Balanca1_0: 769347154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

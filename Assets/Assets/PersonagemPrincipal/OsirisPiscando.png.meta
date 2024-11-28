@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8631d02d20d750a44b4d871e70b2f60f
+guid: 058d5e7cf870dc649b7f6f0cf237b55d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OsirisSemFundo_0
+      name: OsirisPiscando_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 5
+        y: 2
         width: 49
         height: 104
       alignment: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e6eb12d9acc7746a3275e5afbc9672
-      internalID: 287879078
+      spriteID: 342c365da48f6e341a8629e7e034bd00
+      internalID: 1381429190
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OsirisSemFundo_0: 287879078
+      OsirisPiscando_0: 1381429190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

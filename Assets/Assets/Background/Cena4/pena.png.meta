@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8631d02d20d750a44b4d871e70b2f60f
+guid: 73bc8fd22f60ef8438d6cfdde30fda88
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OsirisSemFundo_0
+      name: pena_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 49
-        height: 104
+        x: 162
+        y: 88
+        width: 229
+        height: 293
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e6eb12d9acc7746a3275e5afbc9672
-      internalID: 287879078
+      spriteID: e6e500f7c6a41f548a037e1d489f00bc
+      internalID: -1658007338
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OsirisSemFundo_0: 287879078
+      pena_0: -1658007338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

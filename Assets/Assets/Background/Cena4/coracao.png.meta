@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8631d02d20d750a44b4d871e70b2f60f
+guid: e0a5d6e2c7b9263478243067436f0bb2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OsirisSemFundo_0
+      name: coracao_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 49
-        height: 104
+        x: 120
+        y: 73
+        width: 260
+        height: 354
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0e6eb12d9acc7746a3275e5afbc9672
-      internalID: 287879078
+      spriteID: 590099aea8553b8489cfee84a62acec9
+      internalID: 28975345
       vertices: []
       indices: 
       edges: []
@@ -141,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      OsirisSemFundo_0: 287879078
+      coracao_0: 28975345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

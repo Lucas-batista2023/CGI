@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;  // Adicionado para permitir o uso de IEnumerator
+using System.Collections;
 
 public class EnigmaPortas : MonoBehaviour
 {
@@ -26,9 +26,9 @@ public class EnigmaPortas : MonoBehaviour
             PontuacaoManager.instancia.AtualizarPontuacao(-pontosPorErro); // Penaliza pontuação no manager
 
             if (numeroPorta == 1)
-                textoFeedback.text = "Porta errada! Anúbis não é a resposta.";
+                textoFeedback.text = "Resposta errada! Anúbis não é a resposta.";
             else if (numeroPorta == 2)
-                textoFeedback.text = "Porta errada! Cleópatra não é a resposta.";
+                textoFeedback.text = "Resposta errada! Cleópatra não é a resposta.";
         }
 
         AtualizarPontuacao();
@@ -38,7 +38,7 @@ public class EnigmaPortas : MonoBehaviour
     private void AtualizarPontuacao()
     {
         // Atualiza a exibição da pontuação na tela
-        textoPontuacao.text = "Pontuação " + PontuacaoManager.instancia.pontuacao;
+        textoPontuacao.text = "Pontuação: " + PontuacaoManager.instancia.pontuacao;
     }
 
     private IEnumerator VerificarFimDoJogo()
@@ -57,6 +57,9 @@ public class EnigmaPortas : MonoBehaviour
         }
         else
         {
+            // Salva o estado da música antes de carregar a próxima cena
+            SalvarEstadoMusica();
+
             // Carrega a próxima cena
             SceneManager.LoadScene("Cena3");
         }
@@ -65,5 +68,28 @@ public class EnigmaPortas : MonoBehaviour
     void Start()
     {
         AtualizarPontuacao(); // Atualiza a pontuação ao iniciar a cena
+        RestaurarEstadoMusica(); // Restaura o estado da música
+    }
+
+    private void SalvarEstadoMusica()
+    {
+        // Obtém o AudioManager e salva o tempo atual da música
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            float currentTime = audioManager.GetCurrentTime();
+            PlayerPrefs.SetFloat("MusicTime", currentTime);
+        }
+    }
+
+    private void RestaurarEstadoMusica()
+    {
+        // Obtém o AudioManager e redefine o tempo da música se houver dados salvos
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null && PlayerPrefs.HasKey("MusicTime"))
+        {
+            float savedTime = PlayerPrefs.GetFloat("MusicTime");
+            audioManager.SetCurrentTime(savedTime);
+        }
     }
 }

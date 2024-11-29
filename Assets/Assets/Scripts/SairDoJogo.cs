@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SairDoJogo : MonoBehaviour
 {
-    // Tecla para sair do jogo (exemplo: Escape)
-    public KeyCode teclaParaSair = KeyCode.Q;
+    // Tecla para sair do jogo (alterado para Escape)
+    public KeyCode teclaParaSair = KeyCode.Escape;
 
     void Update()
     {

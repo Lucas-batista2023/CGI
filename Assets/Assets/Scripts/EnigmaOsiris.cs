@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;  // Necessário para usar IEnumerator
 
 public class EnigmaOsiris : MonoBehaviour
 {
@@ -8,45 +9,55 @@ public class EnigmaOsiris : MonoBehaviour
     public GameObject telaFinal; // Tela de resultados finais
     public TMPro.TextMeshProUGUI textoResultadoFinal; // Texto da tela final
 
-    private int pontuacao = 100; // Pontuação inicial
-    private int respostaCorreta = 2; // Número da resposta correta
-    private int pontosPorAcerto = 30; // Pontos ganhos por acerto
+    private int pontosPorPerdoar = 20; // Pontos ganhos por perdoar
+    private int pontosPorCondenar = 10; // Pontos ganhos por condenar, mas sem bônus moral
     private int pontosPorErro = 15; // Pontos perdidos por erro
+    private float delayAntesDeProximaCena = 2f; // Delay antes de mudar para a próxima cena
+
+    void Start()
+    {
+        // Exibir a pontuação inicial a partir do PontuacaoManager
+        AtualizarPontuacao();
+    }
 
     public void EscolherResposta(int numeroResposta)
     {
-        if (numeroResposta == respostaCorreta)
+        if (numeroResposta == 1) // Perdoar a alma
         {
-            pontuacao += pontosPorAcerto;
-            textoFeedback.text = "Você respondeu corretamente! Osíris o recebe com sabedoria.";
+            PontuacaoManager.instancia.AtualizarPontuacao(pontosPorPerdoar); // Atualiza a pontuação global
+            textoFeedback.text = "Você escolheu o caminho da compaixão. Mas lembre-se, a bondade sem sabedoria pode trazer consequências.";
+        }
+        else if (numeroResposta == 2) // Condenar a alma
+        {
+            PontuacaoManager.instancia.AtualizarPontuacao(pontosPorCondenar); // Atualiza a pontuação global
+            textoFeedback.text = "Você preferiu a justiça. Saiba, porém, que nem toda punição traz redenção.";
         }
         else
         {
-            pontuacao -= pontosPorErro;
-
-            if (numeroResposta == 1)
-                textoFeedback.text = "Resposta incorreta! O Tribunal de Osíris se frustra.";
-            else if (numeroResposta == 3)
-                textoFeedback.text = "Resposta incorreta! Seu julgamento pende ao desequilíbrio.";
+            PontuacaoManager.instancia.AtualizarPontuacao(-pontosPorErro); // Subtrai pontos globais
+            textoFeedback.text = "Resposta incorreta! Faça sua escolha com sabedoria.";
         }
 
         AtualizarPontuacao();
-        VerificarFimDoJogo();
+        StartCoroutine(VerificarFimDoJogo()); // Inicia a corrotina com delay
     }
 
     private void AtualizarPontuacao()
     {
-        textoPontuacao.text = "Pontuação: " + pontuacao;
+        // Atualiza o texto da UI com a pontuação global
+        textoPontuacao.text = "Pontuação: " + PontuacaoManager.instancia.pontuacao;
     }
 
-    private void VerificarFimDoJogo()
+    private IEnumerator VerificarFimDoJogo()
     {
-        if (SceneManager.GetActiveScene().name == "Cena4")
-        {
-            // Exibe o resultado final
-            telaFinal.SetActive(true);
+        // Aguarda o tempo especificado antes de realizar a próxima ação
+        yield return new WaitForSeconds(delayAntesDeProximaCena);
 
-            if (pontuacao >= 50)
+        if (SceneManager.GetActiveScene().name == "Cena4") // Checando se é a última cena
+        {
+            telaFinal.SetActive(true); // Exibe o painel final
+
+            if (PontuacaoManager.instancia.pontuacao >= 50) // Avaliação da pontuação final
                 textoResultadoFinal.text = "Parabéns! Sua jornada foi bem-sucedida e você obteve uma segunda chance!";
             else
                 textoResultadoFinal.text = "Seu coração pesou mais que a pena de Maat. Você perdeu sua segunda chance.";
@@ -54,7 +65,7 @@ public class EnigmaOsiris : MonoBehaviour
         else
         {
             // Caso não seja a última cena, carregar a próxima cena
-            SceneManager.LoadScene("UltimaCena");
+            SceneManager.LoadScene("Cena4");
         }
     }
 }

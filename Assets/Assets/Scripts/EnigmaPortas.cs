@@ -38,7 +38,7 @@ public class EnigmaPortas : MonoBehaviour
     private void AtualizarPontuacao()
     {
         // Atualiza a exibição da pontuação na tela
-        textoPontuacao.text = "Pontuação: " + PontuacaoManager.instancia.pontuacao;
+        textoPontuacao.text = "Pontuação " + PontuacaoManager.instancia.pontuacao;
     }
 
     private IEnumerator VerificarFimDoJogo()

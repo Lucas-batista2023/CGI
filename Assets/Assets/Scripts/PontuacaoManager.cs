@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PontuacaoManager : MonoBehaviour
 {
@@ -17,6 +18,29 @@ public class PontuacaoManager : MonoBehaviour
         {
             Destroy(gameObject); // Se já existir, destrua esse objeto
         }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "cena1")
+        {
+            ResetarPontuacao();
+        }
+    }
+
+    public void ResetarPontuacao()
+    {
+        pontuacao = 100;
     }
 
     public void AtualizarPontuacao(int pontos)

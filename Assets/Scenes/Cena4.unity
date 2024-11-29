@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1514159942, guid: eee142dc2e0524d4ca5a2952b6e3fd85, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07a8cef4d527196439eafc13c93ebdb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1685,8 +1685,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 73.4602, y: 75.296}
-  m_SizeDelta: {x: 48.0901, y: 35.572}
+  m_AnchoredPosition: {x: 75.63065, y: 76.86132}
+  m_SizeDelta: {x: 51.5628, y: 38.5176}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796165825
 MonoBehaviour:
@@ -3820,8 +3820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 78.7, y: 41.3}
-  m_SizeDelta: {x: 37.0397, y: 16.753}
+  m_AnchoredPosition: {x: 76.5295, y: 40.206}
+  m_SizeDelta: {x: 41.3806, y: 14.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480069396
 MonoBehaviour:
@@ -3843,7 +3843,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pontua\xE7\xE3o \n     100"
+  m_text: "Pontua\xE7\xE3o\n100"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4947,7 +4947,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.06415099, g: 0.062335394, b: 0.062335394, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

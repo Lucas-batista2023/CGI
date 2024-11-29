@@ -45,7 +45,7 @@ public class EnigmaOsiris : MonoBehaviour
     private void AtualizarPontuacao()
     {
         // Atualiza o texto da UI com a pontuação global
-        textoPontuacao.text = "Pontuação: " + PontuacaoManager.instancia.pontuacao;
+        textoPontuacao.text = "Pontuação " + PontuacaoManager.instancia.pontuacao;
     }
 
     private IEnumerator VerificarFimDoJogo()
